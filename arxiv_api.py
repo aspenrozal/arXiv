@@ -9,12 +9,12 @@ import time
 base_url = 'http://export.arxiv.org/api/query?';
 
 # Search parameters
-# Query: "algorithmic fairness" OR "algorithmic bias" AND variance OR variation OR variability
-search_query = '%28all:%22algorithmic+fairness%22+OR+all:%22algorithmic+bias%22%29+AND+%28all:variance+OR+all:variability+OR+all:variation%29'
+# Query: "algorithmic fairness" OR "algorithmic bias" OR "disparate impact" OR "equal opportunity" OR "equality of opportunity" OR equalized odds" AND "variance" OR "variation" OR "variability" OR "standard deviation"
+search_query = '%28all:%22algorithmic+fairness%22+OR+all:%22algorithmic+bias%22+OR+all:%22disparate+impact%22+OR+all:%22equal+opportunity%22+OR+all:%22equality+of+opportunity%22+OR+all:%22equalized+odds%22%29+AND+%28all:%22variance%22+OR+all:%22variability%22+OR+all:%22variation%22+all:%22standard+deviation%22%29'
 
 # published = 
 start = 0                       # start at the first result
-total_results = 35               # want x total results
+total_results = 60               # want x total results
 results_per_iteration = 5       # 5 results at a time
 wait_time = 3                   # number of seconds to wait beetween calls
 sort_type = 'submittedDate'     # submittedDate or relevance or lastUpdatedDate
@@ -65,10 +65,10 @@ for i in range(start, total_results, results_per_iteration):
 # len( 'ENTRIES', feed.entries )
 
 # # Response is type "bytes" converting to Str
-# convStr = response.decode()
-# # print(type(convStr))
-# # print(convStr)
+convStr = response.decode()
+# print(type(convStr))
+# print(convStr)
 
-# # Write the results to a file
-# with open('test.txt', 'w') as f:
-#     f.write(convStr)
+# Write the results to a file
+with open('test.txt', 'w') as f:
+    f.write(convStr)
