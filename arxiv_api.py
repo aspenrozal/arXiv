@@ -80,10 +80,6 @@ for i in range(start, total_results, results_per_iteration):
 df = pd.DataFrame( metadata, columns = [ 'date', 'category' ] )
 # print( df )
 
-# 
-# df3 = df.groupby( 'category' )[ 'category'].transform( 'count' )
-# print ( df3 )
-
 # List of unique values to use for naming stacks
 # print( np.unique(df.category) )
 
@@ -97,3 +93,23 @@ print( "NEW", df3 )
 # # Plot
 df3.plot( kind = "bar", stacked = True )
 plt.show()
+
+# Categories ##################################################
+# cs.CR - Cryptography and Security
+# cs.CV - Computer Vision and Pattern Recognition
+# cs.CY - Computers and Society
+# cs.DB - Databases
+# cs.DS - Data Structures and Algorithms
+# cs.HC - Human-Computer Interaction
+# cs.IT - Information Theory
+# cs.LG - Machine Learning
+# cs.PL - Programming Languages
+# cs.SI - Social and Information Networks
+# math.CV - Complex Variables
+# math.ST - Statistics Theory
+# physics.soc-ph - Physics and Society
+# q-bio.QM - Quantitative Methods
+# q-fin.GN - Genomics
+# stat.AP - Applications
+# stat.ML  - Machine Learning
+
