@@ -3,8 +3,8 @@
   <link href="http://arxiv.org/api/query?search_query%3D%28all%3A%22algorithmic%20fairness%22%20OR%20all%3A%22algorithmic%20bias%22%20OR%20all%3A%22disparate%20impact%22%20OR%20all%3A%22equal%20opportunity%22%20OR%20all%3A%22equality%20of%20opportunity%22%20OR%20all%3A%22equalized%20odds%22%29%20AND%20%28all%3A%22variance%22%20OR%20all%3A%22variability%22%20OR%20all%3A%22variation%22%20all%3A%22standard%20deviation%22%29%26id_list%3D%26start%3D55%26max_results%3D5" rel="self" type="application/atom+xml"/>
   <title type="html">ArXiv Query: search_query=(all:"algorithmic fairness" OR all:"algorithmic bias" OR all:"disparate impact" OR all:"equal opportunity" OR all:"equality of opportunity" OR all:"equalized odds") AND (all:"variance" OR all:"variability" OR all:"variation" all:"standard deviation")&amp;id_list=&amp;start=55&amp;max_results=5</title>
   <id>http://arxiv.org/api/OTo2dCVerlU80j4QFEYSFDGoMQk</id>
-  <updated>2021-09-07T00:00:00-04:00</updated>
-  <opensearch:totalResults xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">52</opensearch:totalResults>
+  <updated>2021-09-09T00:00:00-04:00</updated>
+  <opensearch:totalResults xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">53</opensearch:totalResults>
   <opensearch:startIndex xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">55</opensearch:startIndex>
   <opensearch:itemsPerPage xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">5</opensearch:itemsPerPage>
 </feed>
