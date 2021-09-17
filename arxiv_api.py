@@ -16,7 +16,7 @@ search_query = '%28all:%22algorithmic+fairness%22+OR+all:%22algorithmic+bias%22+
 
 # published = 
 start = 0                       # start at the first result
-total_results = 60               # want x total results
+total_results = 10               # want x total results
 results_per_iteration = 5       # 5 results at a time
 wait_time = 3                   # number of seconds to wait beetween calls
 sort_type = 'submittedDate'     # submittedDate or relevance or lastUpdatedDate
@@ -62,6 +62,7 @@ for i in range(start, total_results, results_per_iteration):
 
         metadataEntry.append( entry.date.split( sep )[0] )
         metadataEntry.append( entry.category )
+        metadataEntry.append( entry.id.split('/abs/')[-1] )
 
         metadata.append( metadataEntry )
 
@@ -71,26 +72,35 @@ for i in range(start, total_results, results_per_iteration):
     time.sleep(wait_time)
 
 # print( "LENGTH", len(metadata) )
-# print( metadata )
+print( metadata )
+
+# This is a space to remove false positives
+df1 = pd.DataFrame( metadata, columns = [ 'date', 'category', 'id' ] )
+print( df1 )
+
+# Remove the ID column to prep for plot
+del df1[ 'id' ]
+print( df1 )
 
 ################################################################
 # Visualization 
 # data organization: https://www.geeksforgeeks.org/pandas-groupby-count-occurrences-in-column/
 ################################################################
-df = pd.DataFrame( metadata, columns = [ 'date', 'category' ] )
-# print( df )
+# df1 = pd.DataFrame( metadata, columns = [ 'date', 'category' ] )
+# print( df1 )
 
 # List of unique values to use for naming stacks
 # print( np.unique(df.category) )
 
 # Get the counts of the categorical data to match with year
-df2 = pd.DataFrame(df.groupby( [ 'date', 'category' ] ).size() )
+df2 = pd.DataFrame(df1.groupby( [ 'date', 'category' ] ).size() )
 print( df2 )
 
+# Move the counts to new columns
 df3 = df2.transpose().stack(level=0)
 print( "NEW", df3 )
 
-# # Plot
+# Plot
 df3.plot( kind = "bar", stacked = True )
 plt.show()
 
@@ -112,4 +122,4 @@ plt.show()
 # q-fin.GN - Genomics
 # stat.AP - Applications
 # stat.ML  - Machine Learning
-
+###############################################################
