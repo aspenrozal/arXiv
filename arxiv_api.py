@@ -11,13 +11,19 @@ import numpy as np
 base_url = 'http://export.arxiv.org/api/query?';
 
 # Search parameters
+### Used on the ArXiv website
+### "algorithmic fairness" OR "algorithmic bias" OR "disparate impact" OR "equal opportunity" OR "equality of opportunity" OR "equalized odds"
+###"variance" OR "variation" OR "variability" OR "standard deviation"
+
 # Query: "algorithmic fairness" OR "algorithmic bias" OR "disparate impact" OR "equal opportunity" OR "equality of opportunity" OR equalized odds" AND "variance" OR "variation" OR "variability" OR "standard deviation"
-search_query = '%28all:%22algorithmic+fairness%22+OR+all:%22algorithmic+bias%22+OR+all:%22disparate+impact%22+OR+all:%22equal+opportunity%22+OR+all:%22equality+of+opportunity%22+OR+all:%22equalized+odds%22%29+AND+%28all:%22variance%22+OR+all:%22variability%22+OR+all:%22variation%22+all:%22standard+deviation%22%29'
+# search_query = '%28all:%22algorithmic+fairness%22+OR+all:%22algorithmic+bias%22+OR+all:%22disparate+impact%22+OR+all:%22equal+opportunity%22+OR+all:%22equality+of+opportunity%22+OR+all:%22equalized+odds%22%29+AND+%28all:%22variance%22+OR+all:%22variability%22+OR+all:%22variation%22+all:%22standard+deviation%22%29'
+# Searching just for fairness terms
+search_query = '%28all:%22algorithmic+fairness%22+OR+all:%22algorithmic+bias%22+OR+all:%22disparate+impact%22+OR+all:%22equal+opportunity%22+OR+all:%22equality+of+opportunity%22+OR+all:%22equalized+odds%22%29'
 
 # published = 
 start = 0                       # start at the first result
-total_results = 10               # want x total results
-results_per_iteration = 5       # 5 results at a time
+total_results = 420               # want x total results
+results_per_iteration = 10       # 10 results at a time
 wait_time = 3                   # number of seconds to wait beetween calls
 sort_type = 'submittedDate'     # submittedDate or relevance or lastUpdatedDate
 sort_order = 'descending'        # Ascending or descending
